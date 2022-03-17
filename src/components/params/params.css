@@ -1,0 +1,28 @@
+.params-wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+button {
+    background-color: rgb(247, 35, 218);
+    color: #fff;
+    width: 230px;
+    height: 50px;
+    margin: 0px 50px 0px 0px;
+    font-size: 20px;
+    border: 2px solid #000;
+    border-radius: 3em;
+    -webkit-border-radius: 3em;
+    -moz-border-radius: 3em;
+    -ms-border-radius: 3em;
+    -o-border-radius: 3em;
+}
+
+p {
+    font-size: 20px;
+    width: 200px;
+    border: none;
+}
