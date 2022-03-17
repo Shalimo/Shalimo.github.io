@@ -14,9 +14,9 @@ const App = () => {
   const getCourse = new GetCourse();
 
   useEffect(() => {
-    getCourse.getCourse("http://api.exchangeratesapi.io/v1/latest?access_key=9e20d6bfc69b9a5265578891af7d8495")
+    getCourse.getCourse("https://v6.exchangerate-api.com/v6/9e63c35d2b984298eb10dfb8/latest/USD")
     .then(response => {
-      setRates(response.rates);
+      setRates(response.conversion_rates);
     }, [])
   })
 
