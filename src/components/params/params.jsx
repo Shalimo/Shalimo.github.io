@@ -13,10 +13,10 @@ export default class Params extends Component {
             <div className="params">
                 <div className="params-wrapper">
                     <div className="params-item">
-                        <button>awdawd</button>
+                        <button>SWAP</button>
                     </div>
                     <div className="params-item">
-                        <p>{this.props.currentRate}</p>
+                        <p>Current rate {this.props.currentRate}</p>
                     </div>
                 </div>
             </div>
