@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* position: relative; */
 }
 
 input {
@@ -12,6 +13,8 @@ input {
     margin: 0px 20px 0px 0px;
     font-size: 50px;
     border: none;
+    z-index: 100;
+    position: relative;
 }
 
 select {

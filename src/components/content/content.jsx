@@ -14,14 +14,14 @@ export default class Content extends Component {
         <div className="content">
             <div className="content-wrapper">
                 <div className="content-item">
-                    <select value={this.props.currency}>
+                    <select value={this.props.currency} onChange={(e) => this.props.onCurrencyChange(e.target.value)}>
                         {this.props.currencies.map((currency) => (
                             <option value={currency}>{currency}</option>
                         ))}
                     </select>
                 </div>
                 <div className="content-item">
-                    <input className="" type="text" value={this.props.amount}></input>
+                    <input className="" type="text" value={this.props.amount} onChange={(e) => this.props.onAmountChange(e.target.value)}></input>
                 </div>
             </div>
         </div>
@@ -32,5 +32,7 @@ export default class Content extends Component {
 Content.propTypes = {
     amount: PropTypes.number.isRequired,
     currency: PropTypes.string.isRequired,
-    currencies: PropTypes.array.isRequired
+    currencies: PropTypes.array.isRequired,
+    onAmountChange: PropTypes.func,
+    onCurrencyChange: PropTypes.func
 }

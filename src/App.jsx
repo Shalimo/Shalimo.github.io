@@ -6,7 +6,7 @@ import GetCourse from "./services/getCourse";
 
 const App = () => {
   
-  const [firstAmount, setFitstAmount] = useState(1);
+  const [firstAmount, setFirstAmount] = useState(1);
   const [secondAmount, setSecondAmount] = useState(1);
   const [firstCurrency, setFirstCurrency] = useState('USD');
   const [secondCurrency, setSecondCurrency] = useState('USD');
@@ -14,20 +14,41 @@ const App = () => {
   const getCourse = new GetCourse();
 
   useEffect(() => {
-    getCourse.getCourse("http://data.fixer.io/api/latest?access_key=6508de3601ebdb16a4ff2b3dc622c5ab")
+    getCourse.getCourse("http://api.exchangeratesapi.io/v1/latest?access_key=9e20d6bfc69b9a5265578891af7d8495")
     .then(response => {
       setRates(response.rates);
     }, [])
   })
 
+  function handleFirstAmountChange(firstAmount) {
+    setSecondAmount(firstAmount * rates[secondCurrency]/rates[firstCurrency])
+    setFirstAmount(firstAmount) 
+    
+  }
+
+  function handleFirstCurrencyChange(firstCurrency) {
+    setSecondAmount(firstAmount * rates[secondCurrency]/rates[firstCurrency])
+    setFirstCurrency(firstCurrency)
+  }
+  
+  function handleSecondAmountChange(secondAmount) {
+    setFirstAmount(secondAmount * rates[firstCurrency]/rates[secondCurrency])
+    setSecondAmount(secondAmount)
+  }
+
+  function handleSecondCurrencyChange(secondCurrency) {
+    setFirstAmount(secondAmount * rates[firstCurrency]/rates[secondCurrency])
+    setSecondCurrency(secondCurrency)
+  }
+
   return (
     <div>
       <h1>Exchange money</h1>
         <div className="wrapper">
-          <Content currencies={Object.keys(rates)} amount={firstAmount} currency={firstCurrency}/>
-          <Content currencies={Object.keys(rates)} amount={secondAmount} currency={secondCurrency}/>
+          <Content onAmountChange={handleFirstAmountChange} onCurrencyChange={handleFirstCurrencyChange} currencies={Object.keys(rates)} amount={firstAmount} currency={firstCurrency}/>
+          <Content onAmountChange={handleSecondAmountChange} onCurrencyChange={handleSecondCurrencyChange} currencies={Object.keys(rates)} amount={secondAmount} currency={secondCurrency}/>
         </div>
-          <Params/>
+          <Params currentRate={rates[firstCurrency]}/>
     </div>
   )
 };
