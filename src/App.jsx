@@ -14,30 +14,34 @@ const App = () => {
   const getCourse = new GetCourse();
 
   useEffect(() => {
-    getCourse.getCourse("https://v6.exchangerate-api.com/v6/9e63c35d2b984298eb10dfb8/latest/USD")
+    getCourse.getCourse("https://www.cbr-xml-daily.ru/latest.js")
     .then(response => {
-      setRates(response.conversion_rates);
+      setRates(response.rates);
     }, [])
   })
 
+  function toThree(number) {
+    return number.toFixed(3);
+  }
+
   function handleFirstAmountChange(firstAmount) {
-    setSecondAmount(firstAmount * rates[secondCurrency]/rates[firstCurrency])
+    setSecondAmount(toThree(firstAmount * rates[secondCurrency]/rates[firstCurrency]))
     setFirstAmount(firstAmount) 
     
   }
 
   function handleFirstCurrencyChange(firstCurrency) {
-    setSecondAmount(firstAmount * rates[secondCurrency]/rates[firstCurrency])
+    setSecondAmount(toThree(firstAmount * rates[secondCurrency]/rates[firstCurrency]))
     setFirstCurrency(firstCurrency)
   }
   
   function handleSecondAmountChange(secondAmount) {
-    setFirstAmount(secondAmount * rates[firstCurrency]/rates[secondCurrency])
+    setFirstAmount(toThree(secondAmount * rates[firstCurrency]/rates[secondCurrency]))
     setSecondAmount(secondAmount)
   }
 
   function handleSecondCurrencyChange(secondCurrency) {
-    setFirstAmount(secondAmount * rates[firstCurrency]/rates[secondCurrency])
+    setFirstAmount(toThree(secondAmount * rates[firstCurrency]/rates[secondCurrency]))
     setSecondCurrency(secondCurrency)
   }
 
