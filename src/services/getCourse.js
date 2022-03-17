@@ -1,9 +1,7 @@
-export default class getCourse {
-    getResourse = async () => {
-        const result = await fetch("https://www.nbrb.by/api/exrates/rates/28")
+export default class GetCourse {
+    getCourse = async (url) => {
+        const res = await fetch(url);
 
-        return await result.json();
-    }
-
-    
+        return await res.json();
+    }   
 }

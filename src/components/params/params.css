@@ -21,6 +21,15 @@ button {
     -o-border-radius: 3em;
 }
 
+button:hover, button:focus {
+    color: #000;
+    outline: 0;
+  }
+
+button:hover {
+    box-shadow: 0 0 40px 40px #e6e6fa inset;
+  }
+
 p {
     font-size: 20px;
     width: 200px;
