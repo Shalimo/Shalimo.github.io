@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./content.css";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 export default class Content extends Component {
     constructor(props) {
