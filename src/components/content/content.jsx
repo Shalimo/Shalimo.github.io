@@ -29,10 +29,13 @@ export default class Content extends Component {
     }
 }
 
-Content.propTypes = {
-    amount: PropTypes.number.isRequired,
-    currency: PropTypes.string.isRequired,
-    currencies: PropTypes.array.isRequired,
-    onAmountChange: PropTypes.func,
-    onCurrencyChange: PropTypes.func
-}
+
+// only for dev mode:
+
+// Content.propTypes = {
+//     amount: PropTypes.number.isRequired,
+//     currency: PropTypes.string.isRequired,
+//     currencies: PropTypes.array.isRequired,
+//     onAmountChange: PropTypes.func,
+//     onCurrencyChange: PropTypes.func
+// }
