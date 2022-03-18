@@ -16,7 +16,7 @@ export default class Params extends Component {
                         <button>SWAP</button>
                     </div>
                     <div className="params-item">
-                        <p>Current rate {this.props.currentRate}</p>
+                        <p>Current rate: {this.props.currentRate}</p>
                     </div>
                 </div>
             </div>

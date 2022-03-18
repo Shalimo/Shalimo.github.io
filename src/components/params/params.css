@@ -44,14 +44,19 @@ p {
       flex-direction: column;
       justify-content: center;
       text-align: center;
+      /* margin: 0 auto; */
       
+}
+
+.params-item {
+  margin: 0 auto;
 }
 
 p {
     font-size: 20px;
     width: 200px;
     border: none;
-    padding: 15px 0px 0px 70px;
+    padding-top: 10px;
     text-align: center;
     margin: 0;
 }
