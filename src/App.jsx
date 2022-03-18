@@ -21,11 +21,15 @@ const App = () => {
   })
 
   function toThree(number) {
-    return number.toFixed(3);
+    return `${number.toFixed(3)}`;
   }
 
+  // function outIcon(number) {
+  //   return `${number + firstCurrency}`;
+  // }
+
   function handleFirstAmountChange(firstAmount) {
-    setSecondAmount(toThree(firstAmount * rates[secondCurrency]/rates[firstCurrency]))
+    setSecondAmount(toThree(firstAmount * rates[secondCurrency]/rates[firstCurrency]));
     setFirstAmount(firstAmount) 
     
   }
