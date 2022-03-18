@@ -49,8 +49,8 @@ const App = () => {
     <div>
       <h1>Exchange money</h1>
         <div className="wrapper">
-          <Content onAmountChange={handleFirstAmountChange} onCurrencyChange={handleFirstCurrencyChange} currencies={Object.keys(rates)} amount={firstAmount} currency={firstCurrency}/>
-          <Content onAmountChange={handleSecondAmountChange} onCurrencyChange={handleSecondCurrencyChange} currencies={Object.keys(rates)} amount={secondAmount} currency={secondCurrency}/>
+          <Content onAmountChange={handleFirstAmountChange} onCurrencyChange={handleFirstCurrencyChange} currencies={Object.keys(rates)} amount={firstAmount + firstCurrency} currency={firstCurrency}/>
+          <Content onAmountChange={handleSecondAmountChange} onCurrencyChange={handleSecondCurrencyChange} currencies={Object.keys(rates)} amount={secondAmount + secondCurrency} currency={secondCurrency}/>
         </div>
           <Params currentRate={rates[firstCurrency]}/>
     </div>
